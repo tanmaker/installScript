@@ -268,10 +268,10 @@ if grep -rq raspberrypi.org /etc/apt/*; then
   rpivers="$(awk '$1 == "Revision" { print $3 }' /proc/cpuinfo)"
   _log "RPi revision code :: ${rpivers}"
   # https://elinux.org/RPi_HardwareHistory
-  <!---if [[ "${rpivers:0:1}" =~ [09] ]] && [[ ! "${rpivers:0:3}" =~ 902 ]]; then--->
-    <!---_log "This RPi1 is not supported (not true armhf).  Exiting..."--->
-    <!---exit 7--->
-  <!---fi--->
+  #if [[ "${rpivers:0:1}" =~ [09] ]] && [[ ! "${rpivers:0:3}" =~ 902 ]]; then
+  #  _log "This RPi1 is not supported (not true armhf).  Exiting..."
+  #  exit 7
+  #fi
   rpi=1
   _log "Adding Debian signing keys..."
   for key in ${keys}; do
